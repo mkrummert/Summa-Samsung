@@ -1,0 +1,11 @@
+<ion-view view-title="Closest Locations">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-icon-right" ng-repeat="location in locations" type="item-text-wrap" href="#/tab/selected/{{location.id}}">
+        <h2>{{location.display_name}}</h2>
+        <p>{{location.phone_number}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
