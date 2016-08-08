@@ -66,7 +66,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
-
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'Login_Controller'
+  })
     .state('barcode', {
       url: '/barcode',
       templateUrl: 'templates/barcode.html'
@@ -74,5 +78,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 ;
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/local');
+  $urlRouterProvider.otherwise('/login');
 });
