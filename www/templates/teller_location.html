@@ -1,0 +1,25 @@
+<ion-view title="Cash Deposit">
+  <ion-nav-bar class="bar-balanced"></ion-nav-bar>
+  <ion-nav-title style="width:100%; text-align: center;">
+    <table width="97%" style="font-size: 2em;">
+      <tr>
+        <td align="left"><i class="icon ion-home"></i> {{user.last_name | uppercase}}</td>
+        <td align="right"><i class="icon ion-android-more-vertical"></i></td>
+      </tr>
+    </table>
+  </ion-nav-title>
+  <ion-content>
+    <div style="width:100%; text-align: center;">
+      <div style="background-color: #F1F1F1; height: 450px;">
+        <br /><img src="../img/face.png" /><br /><br />
+        <div style="font-size: 3em; font-weight: bold;">
+          {{account.first_name}}
+        </div><br />
+      </div>
+
+      <br /><span style="font-size: 2.5em;">at </span>
+      <span style="font-size: 3em; font-weight: bold;"> Window {{account.window_number}}</span><br />
+      <br /><span style="font-size: 3em;">is ready for you now.</span>
+    </div>
+  </ion-content>
+</ion-view>

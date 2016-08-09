@@ -66,17 +66,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     }
   })
+
+  //In Bank Workflow
+  .state('cashDeposit', {
+    url: '/cashDeposit',
+    templateUrl: 'templates/cash_deposit.html',
+    controller: 'CashDeposit_Controller'
+  })
+  .state('tellerLocation', {
+    url: '/tellerLocation/:selectedID',
+    templateUrl: 'templates/teller_location.html',
+    controller: 'TellerWindow_Controller'
+  })
   .state('login', {
     url: '/login',
     templateUrl: 'templates/login.html',
     controller: 'Login_Controller'
   })
-    .state('barcode', {
-      url: '/barcode',
-      templateUrl: 'templates/barcode.html'
-    })
-;
+  .state('barcode', {
+    url: '/barcode',
+    templateUrl: 'templates/barcode.html'
+  });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/cashDeposit');
 });

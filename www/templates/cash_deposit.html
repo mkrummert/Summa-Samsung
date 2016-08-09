@@ -1,0 +1,41 @@
+<ion-view title="Cash Deposit">
+  <ion-nav-bar class="bar-balanced"></ion-nav-bar>
+  <ion-nav-title style="width:100%; text-align: center;">
+    <table width="97%" style="font-size: 2em;">
+      <tr>
+        <td align="left"><i class="icon ion-home"></i> {{user.last_name | uppercase}}</td>
+        <td align="right"><i class="icon ion-android-more-vertical"></i></td>
+      </tr>
+    </table>
+  </ion-nav-title>
+  <ion-content style="margin-top:10px;">
+    <div style="width:100%; text-align: center;">
+      <span style="font-size: xx-large;">
+      CASH DEPOSIT
+      </span>
+      <hr /><br />
+
+      <table style="text-align: left; width: 100%;">
+        <tr>
+          <td width="5%">&nbsp;</td>
+          <td width="90%">TO ACCOUNT</td>
+          <td width="5%">&nbsp;</td>
+        </tr>
+      </table>
+
+      <select ng-model="selectedTestAccount" style="width:95%;">
+        <option ng-repeat="account in myAccounts" value="{{account.id}}">{{account.last_name | uppercase}}'S CHECKING {{account.account_number}}</option>
+      </select>
+    </div>
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" ng-blur="reformat()" only-num placeholder="Enter Amount Here"" ng-model="enteredAmount">
+      </label>
+    </div>
+
+  </ion-content>
+  <ion-footer-bar>
+    <button class="button button-full button-balanced" ng-click="Submit()">Submit</button>
+  </ion-footer-bar>
+</ion-view>

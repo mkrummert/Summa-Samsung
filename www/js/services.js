@@ -1,4 +1,66 @@
 angular.module('starter.services', [])
+.factory('AccountService', function() {
+  var accounts = [{
+    id:0,
+    account_number: 783316107,
+    last_name: 'Berto',
+    amount: '$7,242.00'
+  }];
+
+  return {
+    all: function() {
+      return accounts;
+    }
+  }
+})
+.factory('AuthenticationService', function() {
+  var user = {
+    first_name: 'John',
+    last_name: 'Berto',
+    token: '123466i798712439812'
+  };
+
+  return {
+    get: function() {
+      return user;
+    }
+  }
+})
+.factory('TellerService', function() {
+  var tellers = [{
+    id: 0,
+    first_name: 'Tina',
+    window_number: 4
+  },{
+    id: 1,
+    first_name: 'Matt',
+    window_number: 2
+  },{
+    id: 2,
+    first_name: 'John',
+    window_number: 1
+  },{
+    id: 3,
+    first_name: 'Mike',
+    window_number: 3
+  }];
+
+  return {
+    all: function() {
+      return tellers;
+    },
+    get: function (tellerId) {
+      {
+        for (var i = 0; i < tellers.length; i++) {
+          if (tellers[i].id === parseInt(tellerId)) {
+            return tellers[i];
+          }
+        }
+        return null;
+      }
+    }
+  }
+})
 .factory('Locations', function() {
     var locations = [{
       id: 0,
