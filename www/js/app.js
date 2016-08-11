@@ -96,7 +96,7 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'starter.controllers', '
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/Intro_Home');
+  $urlRouterProvider.otherwise('/inbank_home');
 });
 
 
@@ -106,8 +106,8 @@ function drawMap() {
 
   if(domMap != null) {
     map = new google.maps.Map(domMap, {
-      center: {lat: 40.4406, lng: -79.9959},
-      zoom: 15
+      center: { lat: 40.7831, lng: -74.007369 },
+      zoom: 11
     });
 
     var height = "height:" + (window.innerHeight - 100).toString() + "px";
@@ -115,16 +115,16 @@ function drawMap() {
 
     // First Marker
     var marker1 = new google.maps.Marker({
-      position: {lat: 40.4406, lng: -79.9959},
-      title: "Hello World!"
+      position: { lat: 40.740648, lng: -74.007369 }
     });
     var contentString1 = '<div id="content">' +
       '<div id="siteNotice">' +
       '</div>' +
-      '<div style="font-size: 1.5em; font-weight: bolder;">23RD ST AND 6TH AVE</div>' +
+      '<div style="font-size: 1.5em; font-weight: bolder;">837 NYC DEMO</div>' +
       '<div id="bodyContent">' +
-      '<p>201 6th Ave<br /> Pittsburgh, PA 15219</p>' +
-      '<p><a style="text-decoration: none;" href="#/intro_selected/1">Choose Location >></a></p>' +
+      '<p>837 Washington Street<br /> New York, NY 10014</p>' +
+      '<p style="color: #26ADD4;">Average Wait Time: <b>9</b> min</p>' +
+      '<p><a href="#/intro_selected/1" style="background-color: #26ADD4;border-color: #26ADD4;color: white;text-decoration: none;box-shadow: none;position: relative;display: inline-block;margin: 0;padding: 0 12px;border-width: 1px;border-style: solid;border-radius: 4px;vertical-align: top;text-align: center;text-overflow: ellipsis;font-size: 13px;line-height: 28px;cursor: pointer;">Choose Location</a></p>' +
       '</div></div>';
     var infoWindow1 = new google.maps.InfoWindow({
       content: contentString1
@@ -133,20 +133,20 @@ function drawMap() {
       infoWindow1.open(map, marker1);
     });
     marker1.setMap(map);
-
+    infoWindow1.open(map, marker1);
 
     // Second Marker
     var marker2 = new google.maps.Marker({
-      position: {lat: 40.440595, lng: -79.996599},
-      title: "Hello World!"
+      position: { lat: 40.852659, lng: -74.011027 }
     });
     var contentString2 = '<div id="content">' +
       '<div id="siteNotice">' +
       '</div>' +
-      '<div style="font-size: 1.5em; font-weight: bolder;">FLATIRON</div>' +
+      '<div style="font-size: 1.5em; font-weight: bolder;">105 NJ DEMO</div>' +
       '<div id="bodyContent">' +
-      '<p>175 5th Ave<br /> Pittsburgh, PA 15219</p>' +
-      '<p><a style="text-decoration: none;" href="#/intro_selected/2">Choose Location >></a></p>' +
+      '<p>105 Challenger Road<br />Ridgefield Park, NJ 07660</p>' +
+      '<p style="color: #26ADD4;">Average Wait Time: <b>9</b> min</p>' +
+      '<p><a href="#/intro_selected/2" style="background-color: #26ADD4;border-color: #26ADD4;color: white;text-decoration: none;box-shadow: none;position: relative;display: inline-block;margin: 0;padding: 0 12px;border-width: 1px;border-style: solid;border-radius: 4px;vertical-align: top;text-align: center;text-overflow: ellipsis;font-size: 13px;line-height: 28px;cursor: pointer;">Choose Location</a></p>' +
       '</div></div>';
     var infoWindow2 = new google.maps.InfoWindow({
       content: contentString2
@@ -155,6 +155,7 @@ function drawMap() {
       infoWindow2.open(map, marker2);
     });
     marker2.setMap(map);
+    infoWindow2.open(map, marker2);
   }
 };
 function initMap() {

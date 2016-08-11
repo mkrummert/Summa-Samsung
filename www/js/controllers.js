@@ -29,52 +29,6 @@ angular.module('starter.controllers', [])
   .controller('Intro_Selected_Controller', function($scope, $stateParams, Locations, AuthenticationService) {
     $scope.location = Locations.get($stateParams.selectedID);
     $scope.user = AuthenticationService.get()[1];
-
-    $scope.IsDepositSelected = false;
-    $scope.IsCashCheckingSelected = false;
-    $scope.IsTransferSelected = false;
-    $scope.IsSavingsBondSelected = false;
-    $scope.IsCashierCheckSelected = false;
-    $scope.IsTravellerCheckSelected = false;
-
-    var setEverythingToFalse = function() {
-      $scope.IsDepositSelected = false;
-      $scope.IsCashCheckingSelected = false;
-      $scope.IsTransferSelected = false;
-      $scope.IsSavingsBondSelected = false;
-      $scope.IsCashierCheckSelected = false;
-      $scope.IsTravellerCheckSelected = false;
-    }
-    $scope.SelectDeposit = function() {
-      setEverythingToFalse();
-
-      $scope.IsDepositSelected = true;
-    };
-    $scope.SelectCashChecking = function(){
-      setEverythingToFalse();
-
-      $scope.IsCashCheckingSelected = true;
-    };
-    $scope.SelectTransfer = function(){
-      setEverythingToFalse();
-
-      $scope.IsTransferSelected = true;
-    };
-    $scope.SelectSavingsBond = function(){
-      setEverythingToFalse();
-
-      $scope.IsSavingsBondSelected = true;
-    };
-    $scope.SelectCashierCheck = function(){
-      setEverythingToFalse();
-
-      $scope.IsCashierCheckSelected = true;
-    };
-    $scope.SelectTravellerCheck = function(){
-      setEverythingToFalse();
-
-      $scope.IsTravellerCheckSelected = true;
-    };
   })
   .controller('Intro_DateAndtime_Controller', function($scope, $stateParams, ionicDatePicker, AuthenticationService) {
     var weekday = [
@@ -133,7 +87,7 @@ angular.module('starter.controllers', [])
       mondayFirst: true,          //Optional
       disableWeekdays: [0],       //Optional
       closeOnSelect: false,       //Optional
-      templateType: 'modal '       //Optional
+      templateType: 'modal '      //Optional
     };
 
     $scope.openDatePicker = function(){

@@ -106,28 +106,52 @@ angular.module('starter.services', [])
 .factory('Locations', function() {
     var locations = [{
       id: 1,
-      latitude: 40.4406,
-      longitude: -79.9959,
+      latitude: 40.778682,
+      longitude: -73.982389,
       distance_from_me: 1.35,
-      display_name: '23RD ST AND 6TH AVE',
+      display_name: 'BANK OF AMERICA',
       phone_number: '412-123-1234',
       wait_time: '2 minutes',
-      address_name: '201 6th Ave',
-      address_city: 'Pittsburgh',
-      address_state: 'PA',
-      address_zip: 15219
+      address_name: '2077 Broadway',
+      address_city: 'New York',
+      address_state: 'NY',
+      address_zip: 10023
     }, {
       id: 2,
-      latitude: 40.440595,
-      longitude: -79.996599,
+      latitude: 40.761568,
+      longitude: -73.966618,
       distance_from_me: 2.68,
-      display_name: 'FLATIRON',
+      display_name: 'BANK OF AMERICA',
       phone_number: '412-123-1234',
       wait_time: '4 minutes',
-      address_name: '175 5th Ave',
-      address_city: 'Pittsburgh',
-      address_state: 'PA',
-      address_zip: 15219
+      address_name: '988 3rd Ave',
+      address_city: 'New York',
+      address_state: 'NY',
+      address_zip: 10022
+    }, {
+      id: 3,
+      latitude: 40.755793,
+      longitude: -73.979605,
+      distance_from_me: 2.68,
+      display_name: 'BANK OF AMERICA',
+      phone_number: '412-123-1234',
+      wait_time: '4 minutes',
+      address_name: '550 5th Ave',
+      address_city: 'New York',
+      address_state: 'NY',
+      address_zip: 10036
+    }, {
+      id: 4,
+      latitude: 40.803950,
+      longitude: -73.954988,
+      distance_from_me: 2.68,
+      display_name: 'FOOD BANK',
+      phone_number: '412-123-1234',
+      wait_time: '4 minutes',
+      address_name: '252 W 116th St',
+      address_city: 'New York',
+      address_state: 'NY',
+      address_zip: 10026
     }];
 
     return {
