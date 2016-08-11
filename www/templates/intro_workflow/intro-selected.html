@@ -1,0 +1,124 @@
+<ion-view title="Selected">
+  <ion-nav-bar class="bar-positive"></ion-nav-bar>
+  <ion-nav-title style="width:100%; text-align: center;">
+    <table width="97%" style="font-size: 2em;">
+      <tr>
+        <td align="left">
+          <table width="100%;">
+            <tr>
+              <td width="15%">
+                <i ng-click="back()" class="ion-ios-arrow-back" ></i>
+              </td>
+              <td width="85%">
+                {{user.last_name | uppercase}}
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td align="right">
+          <img ng-click="goHome()" src="../img/icon_home.png" style="width: 30px;height: auto;" />
+        </td>
+      </tr>
+    </table>
+  </ion-nav-title>
+  <ion-content >
+    <div>
+      <div style="background-color: #F0F1F1; width: 100%;">
+        <br style="line-spacing: 32px;" />
+        <div class="row">
+          <div class="col col-10">&nbsp;</div>
+          <div class="col col-20">
+            <img width="67" src="../img/Location.png" />
+          </div>
+          <div class="col col-60">
+            <span style="font-size: 24px; font-weight: bolder;">{{location.display_name}}</span><br />
+            <span style="font-size: 24px;">{{location.address_name}}</span><br />
+            <span style="font-size: 24px;">{{location.address_city}}, {{location.address_state}} {{address.address_zip}}</span>
+          </div>
+          <div class="col col-10">&nbsp;</div>
+        </div>
+      </div>
+      <br class="LineBreak" />
+      <br class="LineBreak" />
+
+      <div style="width: 100%;">
+        <span class="header">I WANT TO...</span>
+        <hr style="width: 100%; size: 2px;" />
+      </div>
+      <br class="LineBreak" />
+      <br class="LineBreak" />
+
+      <div class="list">
+        <span class="subheader">BASIC SERVICES</span>
+        <div class="row">
+          <div class="col col-50">
+            <button ng-class="{'button-outline': !IsDepositSelected}" ng-click="SelectDeposit()" class="button button-energized" style="width: 100%;">DEPOSIT</button>
+          </div>
+          <div class="col col-50">
+            <button ng-class="{'button-outline': !IsCashCheckingSelected }" ng-click="SelectCashChecking()" class="button button-energized" style="width: 100%;">CHECK CASHING</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-50">
+            <button ng-class="{'button-outline': !IsTransferSelected }" ng-click="SelectTransfer()" class="button button-energized" style="width: 100%;">TRANSFER</button>
+          </div>
+          <div class="col col-50">
+            <button ng-class="{'button-outline': !IsSavingsBondSelected }" ng-click="SelectSavingsBond()" class="button button-energized" style="width: 100%;">SAVINGS BOND</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-50">
+            <button ng-class="{'button-outline': !IsCashierCheckSelected }" ng-click="SelectCashierCheck()" class="button button-energized" style="width: 100%;">CASHIER CHECK</button>
+          </div>
+          <div class="col col-50">
+            <button ng-class="{'button-outline': !IsTravellerCheckSelected }" ng-click="SelectTravellerCheck()" class="button button-energized" style="width: 100%;">TRAVELLER CHECK</button>
+          </div>
+        </div>
+        <br class="LineBreak" />
+        <br class="LineBreak" />
+
+        <span class="subheader">LOAN SERVICES</span>
+        <div class="row">
+          <div class="col col-50">
+            <a href="#/intro_dateAndTime" class="button button-outline button-calm" style="width: 100%;">SMALL BUSINESS</a>
+          </div>
+          <div class="col col-50">
+            <a href="#/intro_dateAndTime" class="button button-outline button-calm" style="width: 100%;">PRIVATE</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-50">
+            <a href="#/intro_dateAndTime" class="button button-outline button-calm" style="width: 100%;">MORTGAGE</a>
+          </div>
+          <div class="col col-50">
+            <a href="#/intro_dateAndTime" class="button button-outline button-calm" style="width: 100%;">AUTO</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-50">
+            <a href="#/intro_dateAndTime" class="button button-outline button-calm" style="width: 100%;">STUDENT</a>
+          </div>
+          <div class="col col-50">
+            <a class="button button-outline button-calm" style="width: 100%;">VETERAN</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-50">
+            <a href="#/intro_dateAndTime" class="button button-outline button-calm" style="width: 100%;">PAYDAY</a>
+          </div>
+          <div class="col col-50">
+            <a href="#/intro_dateAndTime" class="button button-outline button-calm" style="width: 100%;">CONSOLIDATED</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-50">
+            <a href="#/intro_dateAndTime" class="button button-outline button-calm" style="width: 100%;">HOME EQUITY</a>
+          </div>
+          <div class="col col-50">
+            <a href="#/intro_dateAndTime" class="button button-outline button-calm" style="width: 100%;">OTHER</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

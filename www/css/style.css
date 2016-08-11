@@ -1,1 +1,17 @@
-/* Empty. Add your own CSS if you like */
+.header {
+  font-size: 58px;
+}
+.subheader {
+  font-size: 28px;
+  color: #D8D8D7;
+}
+.LineBreak{
+  line-spacing: 32px;
+}
+.Font_Small {
+  font-size: 24px;
+}
+.Font_Info {
+  font-size: 36px;
+  font-weight: bolder;
+}

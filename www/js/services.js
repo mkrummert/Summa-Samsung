@@ -3,6 +3,13 @@ angular.module('starter.services', [])
   var accounts = [{
     id:0,
     account_number: 783316107,
+    is_selected: false,
+    last_name: 'Berto',
+    amount: '$7,242.00'
+  }, {
+    id:1,
+    account_number: 345732450,
+    is_selected: false,
     last_name: 'Berto',
     amount: '$7,242.00'
   }];
@@ -13,12 +20,30 @@ angular.module('starter.services', [])
     }
   }
 })
+.factory('AppointmentService', function() {
+  var appointment = {
+    day_of_week: 'Monday',
+    month: 'August',
+    day: 8,
+    time: '12:00 PM'
+  };
+
+  return {
+    get: function() {
+      return appointment;
+    }
+  }
+})
 .factory('AuthenticationService', function() {
-  var user = {
+  var user = [{
     first_name: 'John',
     last_name: 'Berto',
     token: '123466i798712439812'
-  };
+  },{
+    first_name: 'Sam',
+    last_name: 'Luisa',
+    token: '123466i798712439812'
+  }];
 
   return {
     get: function() {
@@ -26,6 +51,23 @@ angular.module('starter.services', [])
     }
   }
 })
+  .factory('AuthenticationService', function() {
+    var user = [{
+      first_name: 'John',
+      last_name: 'Berto',
+      token: '123466i798712439812'
+    },{
+      first_name: 'Sam',
+      last_name: 'Luisa',
+      token: '123466i798712439812'
+    }];
+
+    return {
+      get: function() {
+        return user;
+      }
+    }
+  })
 .factory('TellerService', function() {
   var tellers = [{
     id: 0,
@@ -63,37 +105,29 @@ angular.module('starter.services', [])
 })
 .factory('Locations', function() {
     var locations = [{
-      id: 0,
-      latitude: 40.4406,
-      longitude: 79.9959,
-      distance_from_me: 1.35,
-      display_name: 'First Location',
-      phone_number: '412-123-1234',
-      wait_time: '2 minutes'
-    }, {
       id: 1,
-      latitude: 40.4567,
-      longitude: 79.7378,
-      distance_from_me: 2.68,
-      display_name: 'Second Location',
+      latitude: 40.4406,
+      longitude: -79.9959,
+      distance_from_me: 1.35,
+      display_name: '23RD ST AND 6TH AVE',
       phone_number: '412-123-1234',
-      wait_time: '4 minutes'
+      wait_time: '2 minutes',
+      address_name: '201 6th Ave',
+      address_city: 'Pittsburgh',
+      address_state: 'PA',
+      address_zip: 15219
     }, {
       id: 2,
-      latitude: 40.4567,
-      longitude: 79.7378,
-      distance_from_me: 3.16,
-      display_name: 'Third Location',
+      latitude: 40.440595,
+      longitude: -79.996599,
+      distance_from_me: 2.68,
+      display_name: 'FLATIRON',
       phone_number: '412-123-1234',
-      wait_time: '5 minutes'
-    }, {
-      id: 3,
-      latitude: 40.5928,
-      longitude: 79.8686,
-      distance_from_me: 3.34,
-      display_name: 'Fourth Location',
-      phone_number: '412-123-1234',
-      wait_time: '1 minute'
+      wait_time: '4 minutes',
+      address_name: '175 5th Ave',
+      address_city: 'Pittsburgh',
+      address_state: 'PA',
+      address_zip: 15219
     }];
 
     return {
@@ -140,6 +174,33 @@ angular.module('starter.services', [])
         }
 
         return promise;
+      }
+    }
+  })
+  .factory('SpecialistService', function() {
+    var specialist = [{
+      id: 1,
+      first_name: 'Jake',
+      last_name: 'Smith'
+    }, {
+      id: 2,
+      first_name: 'Harold',
+      last_name: 'Lawrence'
+    }];
+
+    return {
+      all: function () {
+        return specialist;
+      },
+      get: function (specialistId) {
+        {
+          for (var i = 0; i < specialist.length; i++) {
+            if (specialist[i].id === parseInt(specialistId)) {
+              return specialist[i];
+            }
+          }
+          return null;
+        }
       }
     }
   });

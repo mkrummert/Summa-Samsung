@@ -1,0 +1,47 @@
+<ion-view view-title="Chats">
+  <ion-nav-bar class="bar-balanced"></ion-nav-bar>
+  <ion-nav-title style="width:100%; text-align: center;">
+    <table width="97%" style="font-size: 2em;">
+      <tr>
+        <td align="left">
+          <table width="100%;">
+            <tr>
+              <td width="15%">
+                <i ng-click="back()" class="ion-ios-arrow-back" ></i>
+              </td>
+              <td width="85%">
+                {{user.last_name | uppercase}}
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td align="right">
+          <img ng-click="goHome()" src="../img/icon_home.png" style="width: 30px;height: auto;" />
+        </td>
+      </tr>
+    </table>
+  </ion-nav-title>
+  <ion-content>
+    <br class="LineBreak" />
+    <br class="LineBreak" />
+    <div class="row">
+      <div class="col-10">&nbsp;</div>
+      <div class="col-80">
+        <a href="#/intro_map" class="button button-outline button-stable" style="width: 100%;font-size: 24px;">
+          <br class="LineBreak" />
+          SCHEDULE AN<br />
+          APPOINTMENT<br /><br class="LineBreak" />
+        </a>
+        <br class="LineBreak" />
+        <br class="LineBreak" />
+        <br class="LineBreak" />
+        <a class="button button-outline button-stable" style="width: 100%;font-size: 24px;">
+          <br class="LineBreak" />
+          VIEW CURRENT<br />
+          WAIT TIMES<br /><br class="LineBreak" />
+        </a>
+      </div>
+      <div class="col-10">&nbsp;</div>
+    </div>
+  </ion-content>
+</ion-view>

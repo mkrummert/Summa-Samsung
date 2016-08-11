@@ -3,12 +3,12 @@
 // -------------------------------
 
 $light:                           #fff !default;
-$stable:                          #f8f8f8 !default;
+$stable:                          #198842 !default;
 $positive:                        #CC64A6 !default;
-$calm:                            #11c1f3 !default;
+$calm:                            #26ADD4 !default;
 $balanced:                        #62C29E !default;
-$energized:                       #ffc900 !default;
-$assertive:                       #ef473a !default;
+$energized:                       #F7931D !default;
+$assertive:                       #26ADD4 !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 
@@ -104,7 +104,7 @@ $button-light-active-border:      #ccc !default;
 
 $button-stable-bg:                $stable !default;
 $button-stable-text:              #444 !default;
-$button-stable-border:            #b2b2b2 !default;
+$button-stable-border:            $stable !default;
 $button-stable-active-bg:         #e5e5e5 !default;
 $button-stable-active-border:     #a2a2a2 !default;
 
