@@ -69,30 +69,30 @@ angular.module('starter', ['ionic', 'ionic-datepicker', 'starter.controllers', '
     templateUrl: 'templates/inBank_workflow/inbank-home.html',
     controller: 'InBank_Home_Controller'
   })
-
-  .state('cashDeposit', {
-    url: '/cashDeposit',
-    templateUrl: 'templates/cash_deposit.html',
-    controller: 'CashDeposit_Controller'
+  .state('inbank_cashDeposit', {
+    url: '/inbank_cashDeposit',
+    templateUrl: 'templates/inBank_workflow/inbank_cash_deposit.html',
+    controller: 'InBank_CashDeposit_Controller'
   })
-  .state('cashDepositComplete', {
-    url: '/cashDepositComplete',
-    templateUrl: 'templates/cash_deposit_complete.html',
-    controller: 'CashDepositComplete_Controller'
+  .state('inbank_cashDepositComplete', {
+    url: '/inbank_cashDepositComplete',
+    templateUrl: 'templates/inBank_workflow/inbank_cash_deposit_complete.html',
+    controller: 'InBank_CashDepositComplete_Controller'
   })
-  .state('tellerLocation', {
-    url: '/tellerLocation/:selectedID',
-    templateUrl: 'templates/teller_location.html',
-    controller: 'TellerWindow_Controller'
+  .state('inbank_tellerLocation', {
+    url: '/inbank_tellerLocation/:selectedID',
+    templateUrl: 'templates/inBank_workflow/inbank_teller_location.html',
+    controller: 'Inbank_TellerWindow_Controller'
   })
-  .state('login', {
-    url: '/login',
-    templateUrl: 'templates/login.html',
-    controller: 'Login_Controller'
+  .state('inbank_login', {
+    url: '/inbank_login',
+    templateUrl: 'templates/inBank_workflow/inbank_login.html',
+    controller: 'Inbank_Login_Controller'
   })
-  .state('barcode', {
-    url: '/barcode',
-    templateUrl: 'templates/barcode.html'
+  .state('inbank_receipt', {
+    url: '/inbank_receipt',
+    templateUrl: 'templates/inBank_workflow/inbank_receipt.html',
+    controller: 'Inbank_Receipt_Controller'
   });
 
   // if none of the above states are matched, use this as the fallback

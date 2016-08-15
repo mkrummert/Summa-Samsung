@@ -115,11 +115,7 @@ angular.module('starter.controllers', [])
   .controller('InBank_Home_Controller', function($scope, AuthenticationService) {
     $scope.user = AuthenticationService.get()[0];
   })
-
-  .controller('CashDepositComplete_Controller', function($scope, $state, AuthenticationService) {
-    $scope.user = AuthenticationService.get();
-  })
-.controller('CashDeposit_Controller', function($scope, $state, AccountService, AuthenticationService) {
+.controller('InBank_CashDeposit_Controller', function($scope, $state, AccountService, AuthenticationService) {
   // Properties to be later used
   $scope.canShowSubmit = false;
   $scope.enteredAmount = '';
@@ -127,20 +123,17 @@ angular.module('starter.controllers', [])
 
   // Properties from services
   $scope.myAccounts = AccountService.all();
-  $scope.user = AuthenticationService.get();
+  $scope.user = AuthenticationService.get()[0];
 
   // Methods
   $scope.reformat = function(){
-    if(this.enteredAmount.charAt(0) == '$') {
-      this.enteredAmount = this.enteredAmount.substr(1, this.enteredAmount.length - 1);
-    }
-
     this.enteredAmount = Math.round(this.enteredAmount * 100) / 100;
-    if(this.enteredAmount.toString().indexOf('.') == -1) {
-      this.enteredAmount = this.enteredAmount + ".00";
-    }
 
-    this.enteredAmount = '$' + this.enteredAmount;
+    for(var i = 0; i < this.myAccounts.length; i++){
+      if(this.myAccounts[i].is_selected) {
+        $scope.canShowSubmit = true;
+      }
+    }
   };
   $scope.AccountSelected = function(account) {
     for(var i = 0; i < this.myAccounts.length; i++){
@@ -156,41 +149,38 @@ angular.module('starter.controllers', [])
     account.is_selected = !account.is_selected;
   };
   $scope.Submit = function() {
-    $state.go('cashDepositComplete', { selectedID: 1 });
+    $state.go('inbank_cashDepositComplete', { selectedID: 1 });
   };
 })
-.controller('TellerWindow_Controller', function($scope, $stateParams, $state, TellerService, AuthenticationService) {
-  $scope.user = AuthenticationService.get();
-  $scope.account = TellerService.get($stateParams.selectedID);
+.controller('InBank_CashDepositComplete_Controller', function($scope, $state, AuthenticationService) {
+  $scope.user = AuthenticationService.get()[0];
 
   setTimeout(function() {
-    $state.go('login');
+    $state.go('inbank_tellerLocation');
   }, 5000);
 })
-.controller('Login_Controller', function($scope, $state, LoginService, AuthenticationService) {
-  $scope.user = AuthenticationService.get();
+.controller('Inbank_TellerWindow_Controller', function($scope, $state, TellerService, AuthenticationService) {
+  $scope.user = AuthenticationService.get()[0];
+  $scope.account = TellerService.get(0);
+
+  setTimeout(function() {
+    $state.go('inbank_login');
+  }, 5000);
+})
+.controller('Inbank_Login_Controller', function($scope, $state, LoginService, AuthenticationService) {
+  $scope.user = AuthenticationService.get()[0];
   $scope.log_pattern = LoginService.getLoginPattern();
 
   var lock = new PatternLock('#lockPattern', {
     onDraw:function(pattern){
-      if ($scope.log_pattern) {
-        LoginService.checkLoginPattern(pattern).success(function(data) {
-          lock.reset();
-          $state.go('barcode');
-        }).error(function(data) {
-          lock.error();
-        });
-      } else {
-        LoginService.setLoginPattern(pattern);
-        lock.reset();
-        $scope.log_pattern = LoginService.getLoginPattern();
-        $scope.$apply();
-      }
+      lock.reset();
+      $state.go('inbank_receipt');
     }
   });
 })
-.controller('LocalCtrl', function($scope, Locations) {
+.controller('Inbank_Receipt_Controller', function($scope, Locations, AuthenticationService) {
   $scope.locations = Locations.all();
+  $scope.user = AuthenticationService.get()[0];
 })
 
 

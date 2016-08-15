@@ -1,0 +1,53 @@
+<ion-view title="Login">
+  <ion-nav-bar class="bar-balanced"></ion-nav-bar>
+  <ion-nav-title style="width:100%; text-align: center;">
+    <table width="97%" style="font-size: 2em;">
+      <tr>
+        <td align="left">
+          <table width="100%;">
+            <tr>
+              <td width="15%">
+                <i ng-click="back()" class="ion-ios-arrow-back" ></i>
+              </td>
+              <td width="85%">
+                {{user.last_name | uppercase}}
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td align="right">
+          <img ng-click="goHome()" src="../img/icon_home.png" style="width: 30px;height: auto;" />
+        </td>
+      </tr>
+    </table>
+  </ion-nav-title>
+  <ion-content style="margin-top:10px;">
+    <div class='list card' ng-hide='log_pattern'>
+      <div class='item item-icon-left'>
+        <i class='icon ion-alert assertive'></i>
+        <h2 class='assertive'>Please set your login pattern!</h2>
+      </div>
+    </div>
+
+    <div style="width:100%;">
+      <br class="LineBreak" />
+      <br class="LineBreak" />
+
+      <table style="width: 100%;">
+        <tr>
+          <td style="width: 32px;">&nbsp;</td>
+          <td>
+            <span style="font-size: xx-large;">
+              ENTER YOUR PIN
+            </span>
+            <hr style="width: 100%;" />
+          </td>
+          <td style="width: 32px;">&nbsp;</td>
+        </tr>
+      </table>
+      <div style="text-align: center;">
+        <div id='lockPattern' style="display: inline-block;" class='pattern-holder patt-holder' style="width:100%; text-align: center;"></div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

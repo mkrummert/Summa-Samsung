@@ -126,7 +126,7 @@
     display: block;
     position: absolute;
 
-    top: 0;
+    top: 10px;
     right: 0;
     left: 0;
     z-index: $z-index-bar-title;
@@ -341,6 +341,7 @@
 
 // Header at top
 .bar-header {
+  height: 60px;
   top: 0;
   border-top-width: 0;
   border-bottom-width: 1px;

@@ -1,0 +1,109 @@
+<ion-view view-title="Barcode">
+  <ion-nav-bar style="" class="bar-balanced">
+  </ion-nav-bar>
+  <ion-nav-title style="width:100%; text-align: center; vertical-align: middle; height: 70px;">
+    <table width="97%" style="font-size: 2em;">
+      <tr>
+        <td align="left">
+          <table width="100%;">
+            <tr>
+              <td width="15%">
+                <i ng-click="back()" class="ion-ios-arrow-back" ></i>
+              </td>
+              <td width="85%">
+                {{user.last_name | uppercase}}
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td align="right">
+          <img ng-click="goHome()" src="../img/icon_home.png" style="width: 30px;height: auto;" />
+        </td>
+      </tr>
+    </table>
+  </ion-nav-title>
+  <ion-content>
+    <div style="width:100%;">
+      <div style="background-color: #F1F1F1; height: 150px;">
+        <div class="row">
+          <div class="col col-40">
+            <img style="width: 150px;" src="../img/OkCheck.png" />
+          </div>
+          <div class="col col-60"
+               style="color: green; height: 100px; vertical-align: bottom; font-size: 36px; position:relative; top: 15px; font-weight: bolder;">
+            Transaction <br style="line-height: 36px;" />Complete
+          </div>
+        </div>
+      </div>
+      <br style="line-height: 36px;" />
+
+      <table width="100%;">
+        <tr>
+          <td width="32px">&nbsp;</td>
+          <td style="color: #D8D8D8; font-weight: bold; font-size: 24px;">SUMMARY</td>
+          <td width="32px">&nbsp;</td>
+        </tr>
+      </table>
+
+      <br style="line-height: 5px;" />
+      <table width="100%;">
+        <tr style="line-height: 10px;">
+          <td width="24px"></td>
+          <td >
+             <span style="font-size: 32px; font-weight: bolder; line-height: 44px;">
+                CHECKING 783316107
+              </span>
+          </td>
+        </tr>
+        <tr>
+          <td width="32px">&nbsp;</td>
+          <td valign="top" style="height: 50px; color: green;">
+            <div style="position:relative; top:15px;">
+              <span style="vertical-align: top; position:relative; font-size: 18px; top:-5px;">$</span>
+              <span style="font-size: 44px;">7,242.</span>
+              <span style="vertical-align: top; position:relative; font-size: 18px; top:-5px;">00</span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="24px;">&nbsp;</td>
+          <td>
+            <hr style="border-color: #F1F1F1; background: #F1F1F1;color: #F1F1F1;" />
+          </td>
+          <td width="24px;">&nbsp;</td>
+        </tr>
+      </table>
+      <br style="line-height: 32 px;" />
+
+      <table width="100%">
+        <td width="24px;">&nbsp;</td>
+        <td>
+          <div class="row">
+            <div class="col col-30">
+              <img src="../img/face.png" style="width: 100px;" />
+            </div>
+            <div class="col col-80">
+              <p style="font-size: 24px; font-weight: bolder; line-height: 26px;">Today's Teller: Tina</p>
+              <p style="font-size: 24px; line-height: 22px;">Total Transaction <br />Time: 3:21</p>
+              <p style="font-size: 24px; line-height: 22px; vertical-align: center; position: relative; right: -3px;">
+                <img src="../img/mail.png" style="width: 25px;" />
+                <span style="color: #D8D8D8; font-size: 18px;">&nbsp;&nbsp;Summary
+                  Emailed</span></p>
+            </div>
+          </div>
+        </td>
+        <td width="24px;">&nbsp;</td>
+      </table>
+    </div>
+  </ion-content>
+  <ion-footer-bar class="bar-stable" style="height: 60px; text-align: center;">
+    <div style="width: 100%; position: relative; top: 5px;">
+      <a href="#/inbank_cashDeposit" class="button button-full button-stable" style="font-weight: bolder; font-size: 24px; color: white; margin-top: 3px">FEEDBACK? TAKE OUR SURVEY</a>
+    </div>
+  </ion-footer-bar>
+</ion-view>

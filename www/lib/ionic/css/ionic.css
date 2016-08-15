@@ -4274,6 +4274,7 @@ a.subdued {
     background: none; }
 
 .bar-header {
+  height: 60px;
   top: 0;
   border-top-width: 0;
   border-bottom-width: 1px; }
@@ -8657,7 +8658,7 @@ progress {
       color: #444;
       text-decoration: none; }
     .button.button-stable.active, .button.button-stable.activated {
-      border-color: #a2a2a2;
+        border-color: #a2a2a2;
       background-color: #e5e5e5; }
     .button.button-stable.button-clear {
       border-color: transparent;

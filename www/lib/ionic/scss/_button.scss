@@ -168,12 +168,12 @@
   background: none;
 
   &.button.active,
-  &.button.activated {
-    border-color: transparent;
-    background: none;
-    box-shadow: none;
-    opacity: 0.3;
-  }
+    &.button.activated {
+      border-color: transparent;
+      background: none;
+      box-shadow: none;
+      opacity: 0.3;
+    }
 
   .icon:before,
   &.icon:before {
@@ -190,10 +190,10 @@
   background: none;
   box-shadow: none;
 
-  &.active,
-  &.activated {
-    opacity: 0.3;
-  }
+  //&.active,
+  //&.activated {
+  //  opacity: 0.3;
+  //}
 }
 
 .button-outline {

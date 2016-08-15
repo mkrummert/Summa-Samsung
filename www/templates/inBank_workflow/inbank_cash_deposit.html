@@ -1,0 +1,98 @@
+<ion-view title="Cash Deposit">
+  <ion-nav-bar class="bar-balanced"></ion-nav-bar>
+  <ion-nav-title style="width:100%; text-align: center;">
+    <table width="97%" style="font-size: 2em;">
+      <tr>
+        <td align="left">
+          <table width="100%;">
+            <tr>
+              <td width="15%">
+                <i ng-click="back()" class="ion-ios-arrow-back" ></i>
+              </td>
+              <td width="85%">
+                {{user.last_name | uppercase}}
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td align="right">
+          <img ng-click="goHome()" src="../img/icon_home.png" style="width: 30px;height: auto;" />
+        </td>
+      </tr>
+    </table>
+  </ion-nav-title>
+  <ion-content>
+    <br class="LineBreak" />
+    <br class="LineBreak" />
+    <table width="100%;">
+      <tr>
+        <td style="width: 32px;">&nbsp;</td>
+        <td>
+          <span style="font-size: 32px; font-weight: bolder;">
+            CASH DEPOSIT
+            </span>
+            <hr /><br /><br />
+
+          <span style="color: #D8D8D8; font-weight: bold; font-size: 24px">AMOUNT</span>
+          <div class="list list-inset" style="margin: 0px 0px;">
+            <label class="item item-input">
+              <spam style="">$</spam>
+              <input type="number" ng-blur="reformat()" only-num ng-model="enteredAmount"
+                style="font-size: 2em; color: green; background: transparent; border: none;
+                background: transparent; border-width: 0px; border-style: hidden; width: 100%;">
+                {{decimalValue}}
+            </label>
+            <hr style="color: gray; width: 100%;" />
+          </div><br /><br />
+
+          <span style="color: #D8D8D8; font-weight: bold; font-size: 24px;">TO ACCOUNT</span><br style="line-height: 24px;" />
+          <table width="100%">
+            <tr>
+              <td style="width: 140px;">
+                <button ng-class="{ 'button-outline': !myAccounts[0].is_selected }" class="button button-stable"
+                        ng-click="AccountSelected(myAccounts[0])" style="line-height:100%;" >
+                  CHECKING {{ myAccounts[0].account_number }}
+                </button>
+              </td>
+              <td style="width: 20px;"></td>
+              <td style="width: 140px;">
+                <button ng-class="{ 'button-outline': !myAccounts[1].is_selected }" class="button button-stable"
+                        ng-click="AccountSelected(myAccounts[1])" style="line-height:100%;" >
+                  CHECKING {{ myAccounts[1].account_number }}
+                </button>
+              </td>
+            </tr>
+          </table>
+          <br />
+          <br />
+
+
+          <span style="color: #D8D8D8; font-weight: bold; font-size: 24px;">SUMMARY OPTIONS</span><br style="line-height: 24px;" />
+          <table width="100%">
+            <tr>
+              <td style="width: 140px;">
+                <button class="button button-royal button-outline" ng-click="GoToEmail()" style="line-height:100%; width: 100%;" >
+                  EMAIL
+                </button>
+              </td>
+              <td style="width: 20px;"></td>
+              <td style="width: 140px;">
+                <button class="button button-royal button-outline" ng-click="GoToEmail()" style="line-height:100%; width: 100%;" >
+                  PRINT
+                </button>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td style="width: 32px;">&nbsp;</td>
+      </tr>
+    </table>
+  </ion-content>
+  <ion-footer-bar ng-class="{'bar-stable': canShowSubmit, 'bar-dark': !canShowSubmit }" style="height: 60px; text-align: center;">
+    <button ng-show="canShowSubmit" class="button button-full button-stable"
+            style="font-weight: bolder; font-size: 24px; color: white; margin-top: 3px" ng-click="Submit()">SUBMIT</button>
+    <span ng-show="!canShowSubmit" style="text-align: center; width:100%; font-weight: bolder; font-size: 24px; color: white; margin-top: 15px">
+      Select Account and Amount
+    </span>
+  </ion-footer-bar>
+</ion-view>
