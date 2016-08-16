@@ -31,7 +31,7 @@
           <span style="font-size: 32px; font-weight: bolder;">
             CASH DEPOSIT
             </span>
-            <hr /><br /><br />
+            <hr style="border-width: 2px;" /><br /><br />
 
           <span style="color: #D8D8D8; font-weight: bold; font-size: 24px">AMOUNT</span>
           <div class="list list-inset" style="margin: 0px 0px;">
@@ -43,7 +43,7 @@
               <input id="decimal" type="number" ng-keypress="keyPressDecimal($event)" style="font-size: 40px; height: 80px; color: green; background: transparent; border: none;
                  width: 60px; padding-right: 0; padding-bottom: 30px;" id="decimal" />
             </label>
-            <hr style="color: gray; width: 100%;" />
+            <hr style="color: gray; width: 100%; border-width: 2px;" />
           </div><br /><br />
 
           <span style="color: #D8D8D8; font-weight: bold; font-size: 24px;">TO ACCOUNT</span><br style="line-height: 24px;" />
@@ -51,14 +51,14 @@
             <tr>
               <td style="width: 140px;">
                 <button ng-class="{ 'button-outline': !myAccounts[0].is_selected }" class="button button-stable"
-                        ng-click="AccountSelected(myAccounts[0])" style="line-height:100%;" >
+                        ng-click="AccountSelected(myAccounts[0])" style="line-height:100%; border-width: 2px;" >
                   CHECKING {{ myAccounts[0].account_number }}
                 </button>
               </td>
               <td style="width: 20px;"></td>
               <td style="width: 140px;">
                 <button ng-class="{ 'button-outline': !myAccounts[1].is_selected }" class="button button-stable"
-                        ng-click="AccountSelected(myAccounts[1])" style="line-height:100%;" >
+                        ng-click="AccountSelected(myAccounts[1])" style="line-height:100%; border-width: 2px;" >
                   CHECKING {{ myAccounts[1].account_number }}
                 </button>
               </td>
@@ -72,13 +72,13 @@
           <table width="100%">
             <tr>
               <td style="width: 140px;">
-                <button class="button button-royal button-outline" ng-click="GoToEmail()" style="line-height:100%; width: 100%;" >
+                <button class="button button-royal button-outline" ng-click="GoToEmail()" style="line-height:100%; width: 100%; border-width: 2px;" >
                   EMAIL
                 </button>
               </td>
               <td style="width: 20px;"></td>
               <td style="width: 140px;">
-                <button class="button button-royal button-outline" ng-click="GoToEmail()" style="line-height:100%; width: 100%;" >
+                <button class="button button-royal button-outline" ng-click="GoToEmail()" style="line-height:100%; width: 100%; border-width: 2px;" >
                   PRINT
                 </button>
               </td>
