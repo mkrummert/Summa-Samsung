@@ -1,8 +1,8 @@
 <ion-view view-title="Barcode">
   <ion-nav-bar style="" class="bar-balanced">
   </ion-nav-bar>
-  <ion-nav-title style="width:100%; text-align: center; vertical-align: middle; height: 70px;">
-    <table width="97%" style="font-size: 2em;">
+  <ion-nav-title style="width:100%; text-align: center;">
+    <table width="97%" style="font-size: 1.5em;">
       <tr>
         <td align="left">
           <table width="100%;">
@@ -17,7 +17,7 @@
           </table>
         </td>
         <td align="right">
-          <img ng-click="goHome()" src="../img/icon_home.png" style="width: 30px;height: auto;" />
+          <img ng-click="goHome()" src="../img/icon_home.png" style="width: 25px;height: auto;" />
         </td>
       </tr>
     </table>
@@ -37,7 +37,7 @@
       </div>
       <br style="line-height: 36px;" />
 
-      <table width="100%;">
+      <table style="margin-bottom: 5px; width: 100%;">
         <tr>
           <td width="32px">&nbsp;</td>
           <td style="color: #D8D8D8; font-weight: bold; font-size: 24px;">SUMMARY</td>
@@ -45,7 +45,6 @@
         </tr>
       </table>
 
-      <br style="line-height: 5px;" />
       <table width="100%;">
         <tr style="line-height: 10px;">
           <td width="24px"></td>
@@ -57,28 +56,22 @@
         </tr>
         <tr>
           <td width="32px">&nbsp;</td>
-          <td valign="top" style="height: 50px; color: green;">
-            <div style="position:relative; top:15px;">
-              <span style="vertical-align: top; position:relative; font-size: 18px; top:-5px;">$</span>
-              <span style="font-size: 44px;">7,242.</span>
-              <span style="vertical-align: top; position:relative; font-size: 18px; top:-5px;">00</span>
+          <td valign="top" style="height: 50px;">
+            <div style="position:relative; top:15px; margin-bottom: 30px;">
+              <span style="vertical-align: top; position:relative; font-size: 18px; top:-9px;">$</span>
+              <span style="color: green; font-size: 44px;">7,242.</span>
+              <span style="color: green; vertical-align: top; position:relative; font-size: 18px; top:-9px;">00</span>
             </div>
           </td>
         </tr>
         <tr>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
           <td width="24px;">&nbsp;</td>
           <td>
-            <hr style="border-color: #F1F1F1; background: #F1F1F1;color: #F1F1F1; border-width: 2px;" />
+            <hr noshade="true" style="color: #4d4a4a; height: 2px; background-color: #4d4a4a; border: none;" />
           </td>
           <td width="24px;">&nbsp;</td>
         </tr>
       </table>
-      <br style="line-height: 32 px;" />
 
       <table width="100%">
         <td width="24px;">&nbsp;</td>
@@ -101,7 +94,7 @@
       </table>
     </div>
   </ion-content>
-  <ion-footer-bar class="bar-stable" style="height: 60px; text-align: center;">
+  <ion-footer-bar class="bar-stable" style="height: 60px; text-align: center;background-image: linear-gradient(white, white);">
     <div style="width: 100%; position: relative; top: 5px;">
       <a href="#/inbank_cashDeposit" class="button button-full button-stable" style="font-weight: bolder; font-size: 24px; color: white; margin-top: 3px">FEEDBACK? TAKE OUR SURVEY</a>
     </div>

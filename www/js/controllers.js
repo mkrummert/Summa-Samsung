@@ -122,12 +122,20 @@ angular.module('starter.controllers', [])
   $scope.canShowSubmit = false;
   $scope.enteredAmount = '';
   $scope.testAccounts = [];
+  $scope.showEmail = false;
+  $scope.showPrint = false;
 
   // Properties from services
   $scope.myAccounts = AccountService.all();
   $scope.user = AuthenticationService.get()[0];
 
   // Methods
+  $scope.EmailClicked = function() {
+    $scope.showEmail = !$scope.showEmail;
+  }
+  $scope.PrintClicked = function() {
+    $scope.showPrint = !$scope.showPrint;
+  }
   $scope.reformat = function(){
     this.enteredAmount = Math.round(this.enteredAmount * 100) / 100;
 
@@ -148,17 +156,24 @@ angular.module('starter.controllers', [])
     }
   }
   $scope.AccountSelected = function(account) {
+    var deselectOnly = false;
+    if(account.is_selected) {
+      deselectOnly = true;
+    }
+
     for(var i = 0; i < this.myAccounts.length; i++){
       if(this.myAccounts[i].is_selected) {
         this.myAccounts[i].is_selected = false;
       }
     }
 
-    if(this.enteredAmount != '') {
-      $scope.canShowSubmit = true;
-    }
+    if(!deselectOnly) {
+      if(this.enteredAmount != '') {
+        $scope.canShowSubmit = true;
+      }
 
-    account.is_selected = !account.is_selected;
+      account.is_selected = !account.is_selected;
+    }
   };
   $scope.Submit = function() {
     $state.go('inbank_cashDepositComplete', { selectedID: 1 });
@@ -166,18 +181,17 @@ angular.module('starter.controllers', [])
 })
 .controller('InBank_CashDepositComplete_Controller', function($scope, $state, AuthenticationService) {
   $scope.user = AuthenticationService.get()[0];
-
-  setTimeout(function() {
+  $scope.nextPage = function() {
     $state.go('inbank_tellerLocation');
-  }, 5000);
+  }
 })
 .controller('Inbank_TellerWindow_Controller', function($scope, $state, TellerService, AuthenticationService) {
   $scope.user = AuthenticationService.get()[0];
   $scope.account = TellerService.get(0);
 
-  setTimeout(function() {
+  $scope.nextPage = function() {
     $state.go('inbank_login');
-  }, 5000);
+  }
 })
 .controller('Inbank_Login_Controller', function($scope, $state, LoginService, AuthenticationService) {
   $scope.user = AuthenticationService.get()[0];
