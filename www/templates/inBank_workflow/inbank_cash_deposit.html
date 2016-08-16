@@ -35,12 +35,13 @@
 
           <span style="color: #D8D8D8; font-weight: bold; font-size: 24px">AMOUNT</span>
           <div class="list list-inset" style="margin: 0px 0px;">
-            <label class="item item-input">
-              <spam style="">$</spam>
-              <input type="number" ng-blur="reformat()" only-num ng-model="enteredAmount"
-                style="font-size: 2em; color: green; background: transparent; border: none;
-                background: transparent; border-width: 0px; border-style: hidden; width: 100%;">
-                {{decimalValue}}
+            <label class="item item-input" style="font-size: 80px;font-size: 80px;position: relative;right: 18px;">
+              <spam style="font-size: 40px;">$</spam>
+              <input id="number" type="number" ng-keypress="keyPress($event)" ng-blur="reformat()" only-num ng-model="enteredAmount"
+                style="font-size: 80px; height: 80px; color: green; background: transparent; border: none;
+                background: transparent; border-width: 0px; border-style: hidden; width: 200px; padding-right: 0;">
+              <input id="decimal" type="number" ng-keypress="keyPressDecimal($event)" style="font-size: 40px; height: 80px; color: green; background: transparent; border: none;
+                 width: 60px; padding-right: 0; padding-bottom: 30px;" id="decimal" />
             </label>
             <hr style="color: gray; width: 100%;" />
           </div><br /><br />
@@ -89,10 +90,12 @@
     </table>
   </ion-content>
   <ion-footer-bar ng-class="{'bar-stable': canShowSubmit, 'bar-dark': !canShowSubmit }" style="height: 60px; text-align: center;">
-    <button ng-show="canShowSubmit" class="button button-full button-stable"
-            style="font-weight: bolder; font-size: 24px; color: white; margin-top: 3px" ng-click="Submit()">SUBMIT</button>
-    <span ng-show="!canShowSubmit" style="text-align: center; width:100%; font-weight: bolder; font-size: 24px; color: white; margin-top: 15px">
-      Select Account and Amount
+    <span ng-show="canShowSubmit" style="text-align: center;  width:100%;">
+      <a class="button button-full button-stable"
+         style="font-weight: bolder; font-size: 24px; color: white;" ng-click="Submit()">SUBMIT</a>
+    </span>
+    <span ng-show="!canShowSubmit" style="color: #898989;text-align: center; width:100%; font-weight: bolder; font-size: 24px; margin-top: 15px">
+      SELECT ACCOUNT AND AMOUNT
     </span>
   </ion-footer-bar>
 </ion-view>

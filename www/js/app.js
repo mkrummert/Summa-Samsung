@@ -110,7 +110,7 @@ function drawMap() {
       zoom: 11
     });
 
-    var height = "height:" + (window.innerHeight - 100).toString() + "px";
+    var height = "height:" + (window.innerHeight - 60).toString() + "px";
     document.getElementById('map').setAttribute("style", height);
 
     // First Marker

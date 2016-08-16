@@ -117,6 +117,8 @@ angular.module('starter.controllers', [])
   })
 .controller('InBank_CashDeposit_Controller', function($scope, $state, AccountService, AuthenticationService) {
   // Properties to be later used
+  $scope.decimalValues = 0;
+  $scope.hasStartedCounting = false;
   $scope.canShowSubmit = false;
   $scope.enteredAmount = '';
   $scope.testAccounts = [];
@@ -135,6 +137,16 @@ angular.module('starter.controllers', [])
       }
     }
   };
+  $scope.keyPress = function(evt) {
+    if(String.fromCharCode(evt.keyCode) == '.') {
+      document.getElementById('decimal').focus();
+    }
+  }
+  $scope.keyPressDecimal = function(evt) {
+    if(document.getElementById('decimal').value.length == 2) {
+      evt.preventDefault();
+    }
+  }
   $scope.AccountSelected = function(account) {
     for(var i = 0; i < this.myAccounts.length; i++){
       if(this.myAccounts[i].is_selected) {
@@ -181,23 +193,6 @@ angular.module('starter.controllers', [])
 .controller('Inbank_Receipt_Controller', function($scope, Locations, AuthenticationService) {
   $scope.locations = Locations.all();
   $scope.user = AuthenticationService.get()[0];
-})
-
-
-// Directives
-.directive('onlyNum', function() {
-  return function(scope, element, attrs) {
-
-    var keyCode = [8, 9, 37, 39, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 110, 190];
-    element.bind("keydown", function(event) {
-      //console.log($.inArray(event.which,keyCode));
-      if ($.inArray(event.which, keyCode) === -1) {
-        scope.$apply(function() {
-          scope.$eval(attrs.onlyNum);
-          event.preventDefault();
-        });
-        event.preventDefault();
-      }
-    });
-  };
 });
+
+
